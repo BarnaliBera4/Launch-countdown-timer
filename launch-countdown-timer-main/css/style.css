@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    
+}
+.img-hills{
+    width: 100%;
+    display: block;
+
+} 
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* overflow: hidden; */
+    margin: 0;
+    background-image: url(../images/bg-stars.svg);
+    background-color:hsl(234, 17%, 12%);
+}
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h3{
+    position: absolute;
+    top: 15%;
+    
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    letter-spacing: 6px;
+    margin: 0 16px;
+}
+.counter{
+    display: flex;
+    gap: 20px;
+    text-align: center;
+}
+.flipcard {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    
+    position: relative;
+}
+.top-flip,
+.bottom-flip {
+    position: absolute;
+}
+.top-flip {
+    transform-origin: bottom;
+    transform: rotateX(0deg);
+    animation: flip-top 0.5s ease-in forwards;
+}
+.bottom-flip {
+    bottom: 0;
+    animation: flip-bottom 0.5s ease-out 0.5s;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+.top,
+.bottom,
+.bottom-flip,
+.top-flip
+{
+    height: 50px;
+    width: 100px;
+    padding: 26px 16px;
+    color: hsl(345, 95%, 68%);
+    overflow: hidden;
+    text-align: center;
+    font-size: 40px;
+}
+.top,.top-flip {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.7);
+    background-color: hsl(236, 21%, 26%);
+    
+}
+.bottom,.bottom-flip {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: hsl(243, 17%, 36%);
+    box-shadow: 0 11px black;
+}
+.flipcard::after{
+    position: absolute;
+    content: "";
+    border-radius: 0 5px 5px 0;
+    height: 10px;
+    width: 6px;
+    background-color: black;
+    top: 44%;
+    left: 0px;
+    z-index: 1;
+    
+}
+.flipcard::before{
+    position: absolute;
+    content: "";
+    border-radius: 5px 0 0px 5px;
+    height: 10px;
+    width: 6px;
+    background-color: black;
+    top: 44%;
+    left:94px;
+    z-index: 1;
+    
+}
+p {
+    
+    font-weight:lighter;
+    letter-spacing: 1.5px;
+    color: hsl(237, 18%, 59%);
+    margin-top: 40px;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.media{
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.media > span {
+    margin-right: 10px;
+    cursor: pointer;
+    
+}
+
+.media > span:hover{
+    filter: invert(60%) sepia(43%) saturate(6017%) hue-rotate(315deg) brightness(109%) contrast(97%);
+}
+.attribution{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@keyframes flip-top {
+    to {
+        transform: rotateX(90deg);
+    }
+}
+@keyframes flip-bottom {
+    to {
+        transform: rotateX(0deg);
+    }
+}
+@media (max-width:586px){
+    .attribution {
+        font-size:8px;
+        
+    }
+    .media > span > img{
+        width:15px;
+
+    }
+    h3 {
+        font-size: 18px;
+        top:20%;
+        
+    }
+    .top, .bottom, .bottom-flip, .top-flip {
+        height: 30px;
+        width: 75px;
+        padding: 16px 16px;
+        font-size: 25px;
+    }
+    p {
+        font-size: 12px;
+    }
+    .flipcard::before {
+        height: 8px;
+        top: 43%;
+        left: 70px;
+       
+    }
+    .flipcard::after {
+        height: 8px;
+        top: 43%;
+        
+    }
+    .img-hills{
+        width: 200%;
+    }
+}
+@media (max-width:425px){
+    .attribution {
+        font-size:5px;
+        
+        
+    }
+    .counter {
+        gap: 15px;
+    }
+    .media > span > img{
+        width:15px;
+
+    }
+    .top, .bottom, .bottom-flip, .top-flip {
+        
+        width: 60px;
+        padding: 16px 13px;
+        
+    }
+    p {
+        font-size: 9px;
+    }
+    .flipcard::before {
+        height: 6px;
+        top: 46%;
+        left: 56px;
+        width: 4px;
+    }
+    .flipcard::after {
+        height: 6px;
+        top: 46%;
+        width: 4px;
+        
+    }
+}
+
+
